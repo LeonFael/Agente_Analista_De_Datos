@@ -1,0 +1,77 @@
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --font-sans: system-ui, -apple-system, sans-serif;
+  --font-mono: ui-monospace, monospace;
+  --surface-1: #f1efe8;
+  --surface-2: #ffffff;
+  --text-primary: #0b0b0b;
+  --text-secondary: #5f5e5a;
+  --text-muted: #888780;
+  --text-accent: #0c447c;
+  --text-success: #0f6e56;
+  --text-danger: #a32d2d;
+  --border: rgba(0,0,0,.1);
+  --border-strong: #b4b2a9;
+  --border-accent: #2a78d6;
+  --bg-accent: #e6f1fb;
+  --bg-success: #eaf3de;
+  --bg-danger: #fcebeb;
+  --fill-accent: #2a78d6;
+  --radius: 8px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --surface-1: #252523;
+    --surface-2: #2c2c2a;
+    --text-primary: #f0efea;
+    --text-secondary: #b4b2a9;
+    --text-muted: #888780;
+    --text-accent: #85b7eb;
+    --text-success: #5dcaa5;
+    --text-danger: #f09595;
+    --border: rgba(255,255,255,.1);
+    --border-strong: #444441;
+    --border-accent: #378add;
+    --bg-accent: #042c53;
+    --bg-success: #173404;
+    --bg-danger: #501313;
+    --fill-accent: #378add;
+  }
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--surface-1);
+  color: var(--text-primary);
+  min-height: 100vh;
+}
+
+#root { max-width: 960px; margin: 0 auto; padding: 2rem 1rem; }
+
+input[type="password"], input[type="text"] {
+  width: 100%; padding: 8px 12px;
+  border: 0.5px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-size: 13px;
+  outline: none;
+}
+input:focus { border-color: var(--border-accent); box-shadow: 0 0 0 3px rgba(42,120,214,.12); }
+
+button {
+  padding: 8px 16px;
+  border: 0.5px solid var(--border-strong);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  cursor: pointer;
+  transition: opacity .12s;
+}
+button:hover:not(:disabled) { opacity: 0.85; }
+button:disabled { opacity: .4; cursor: not-allowed; }
